@@ -1,6 +1,6 @@
-# Title (replace with your title)
+# Regular Expression (Regex)
 
-Introductory paragraph (replace this with your text)
+Regular expressions are patterns used to match character combinations in strings. In JavaScript, regular expressions are also objects.
 
 ## Summary
 
