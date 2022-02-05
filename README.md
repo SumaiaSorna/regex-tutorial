@@ -81,7 +81,30 @@ Matches: gray or grey
 
 ### The OR Operator
 
+The OR operator allows you to compose regular expression patterns to match any one out of a set of alternative choices. For example, the (t|T) will match either t or T from the input string.
+
+```
+Example String: "The quick brown fox jumps over the lazy dog";
+Expression: "(t|T)";
+Matches: "T" from the “The” at the beginning
+Matches: "t" from the “the” near the end.
+
+```
+
 ### Flags
+
+Regular expressions may have flags that affect the search (e.g. search with case sensitive or not). There are six of them in JS.
+
+```
+Example String: "We will, we will rock you";
+
+Expression 1: alert( str.match(/we/gi) );
+Matches 1: We,we (not case sensitive)
+
+Expression 2: str.match(/we/i); // without flag g, now Case sensitive
+Matches 2: Case sensitive We
+
+```
 
 ### Character Escapes
 
