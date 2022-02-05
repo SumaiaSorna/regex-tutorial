@@ -108,6 +108,41 @@ Matches 2: Case sensitive We
 
 ### Character Escapes
 
+The backslash in a regular expression precedes a literal character. You also escape certain letters that represent common character classes, such as \w for a word character or \s for a space. The following example matches word characters (alphanumeric and underscores) and spaces.
+
+```
+Example String: "Are you there, Saafee?, asked Sumaia.",
+Expression: "(here|there).+(\w+).+(said|asked)(\s)(\w+)\." );
+Output: "there, Saafee?, asked Sumaia."
+
+```
+
 ### Combined example
 
+In the following Regex example, if my target is matching any email address from the domains of yahoo.com and gmail.com.
+
+Regex Expression:
+
+```
+(\W|^)[\w.\-]{0,25}@(yahoo|gmail)\.com(\W|$)
+```
+
+What this means:
+
+- ^ matches the start of a new line & $ matches the end of a line. See more on: `Anchors`
+
+- {0,25} indicates that from 0 to 25 characters in the preceding character set can occur before the @ symbol. See more in `Quantifier`
+
+- [\w.\-] matches any word character (a-z, A-Z, 0-9, or an underscore), a period, or a hyphen. Similarly, groups can also be defined, see `Grouping Constructs`
+
+- Square bracket in here [\w.\-] means any word character (a-z, A-Z, 0-9, or an underscore) will check matches the target string. The \- (which indicates a hyphen) must occur last in the list of characters within the `Square brackets`
+
+- Sometime, Character Classes allow flexibility of searching combined characters, see `Character Classes`
+
+- The (...) formatting groups the domains, and the | character that separates them indicates an “or.” See more for The `OR Operator`
+
+- \W matches any character that’s not a letter, digit, or underscore. It prevents the Regex from matching characters before or after the email address. See more on `Character Escapes`. Also, note here for the above example, the \ before the dash and period “escapes” these characters—that is, it indicates that the dash and period aren't a Regex special character themselves. There's no need to escape the period within the `Square brackets`
+
 ## Author
+
+If you have any questions about this application, please feel free to contact me in my <a href="mailto:sorna.sumaia@gmail.com">email.</a>
