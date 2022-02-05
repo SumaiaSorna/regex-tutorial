@@ -37,7 +37,26 @@ A$ : Match at the end of a line.
 
 ### Quantifiers
 
+Quantifiers allow you to specify how many times you want a particular Regex string to match. Regex matching is eager and will match as much as possible, which is not always the desired behaviour. Some quantifiers allow you to limit how much is matched.
+
+```
+*- Match 0 or more times.
++ - Match 1 or more times
+{ n } - Match exactly n times.
+
+```
+
 ### Grouping Constructs
+
+Grouping constructs delineate subexpressions of a regular expression and typically capture substrings of an input string. Here is an example for you:
+
+```
+Example String: "1ABB 3ABBC 5AB 5AC"
+Expression/subexpression: “(?> subexpression )”
+Grouping Constructs Regex pattern: ( [13579](?>A+B+)
+Matches: "1ABB", "3ABB", and "5AB"
+
+```
 
 ### Bracket Expressions
 
