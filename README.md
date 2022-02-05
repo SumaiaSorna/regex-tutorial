@@ -60,7 +60,24 @@ Matches: "1ABB", "3ABB", and "5AB"
 
 ### Bracket Expressions
 
+A bracket expression represents a character set via a list of characters enclosed by the square brackets: '[' and ']'. It normally matches the target string with any single character from the list. Please see the following example:
+
+```
+Expression: [abc]
+Matches: a, b, or c
+
+
+```
+
 ### Character Classes
+
+With a “character class”, also called “character set”, you can tell the Regex engine to match only one out of several characters. Simply place the characters you want to match between square brackets.
+
+```
+Expression: If you want to match an a or an e, use [ae] like this gr[ae]y .
+Matches: gray or grey
+
+```
 
 ### The OR Operator
 
